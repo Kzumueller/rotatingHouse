@@ -112,10 +112,10 @@ void keyboardInput(unsigned char key, int x, int y) {
       polygonMode = polygonMode == GL_LINE ? GL_FILL : GL_LINE;
       glutPostRedisplay();
       break;
-    case 'w': rotateAroundCenter(20., HORIZONTAL); break;
-    case 'a': rotateAroundCenter(-20., VERTICAL); break;
-    case 's': rotateAroundCenter(-20., HORIZONTAL); break;
-    case 'd': rotateAroundCenter(20., VERTICAL); break;
+    case 'w': rotateAroundCenter(5., HORIZONTAL); break;
+    case 'a': rotateAroundCenter(-5., VERTICAL); break;
+    case 's': rotateAroundCenter(-5., HORIZONTAL); break;
+    case 'd': rotateAroundCenter(5., VERTICAL); break;
     case 't': runOnTimer = !runOnTimer; 
 	      glutTimerFunc(20, timer, 0); 
 	      break;
@@ -128,7 +128,7 @@ void keyboardInput(unsigned char key, int x, int y) {
 int main (int argc, char** argv) {
         glutInit(&argc, argv);
         glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
-        glutInitWindowSize(900, 600);
+        glutInitWindowSize(450, 600);
 	glutCreateWindow("House");
         glutKeyboardFunc(keyboardInput);
 	glutDisplayFunc(display);
