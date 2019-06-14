@@ -39,26 +39,29 @@ const GLubyte triangles[] = {
 20,21,22,
 20,22,23,
   
-0,1,2,
-2,3,0,
+1,0,2,
+0,3,2,
 
-0,4,1,
-1,5,4,
+5,4,6,
+4,7,6,
 
-4,5,6,
-6,7,4,
+2,3,6,
+3,7,6,
 
-7,6,2,
-7,3,2,
+1,0,5,
+0,4,5,
 
-6,2,9,
+0,4,3,
+4,7,3,
+
+2,6,9,
 1,5,8,
 
-11,12,13,
-11,10,12,
+10,14,11,
+14,15,11,
 
-11,14,15,
-11,10,14
+10,12,11,
+12,13,11,
 };
 
 GLenum polygonMode = GL_FILL;
@@ -73,8 +76,7 @@ void display() {
 	glPolygonMode(GL_FRONT_AND_BACK, polygonMode);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(0,0,-1, 0,0,0, 0,1,0);
-	glOrtho(-10., 10., -10., 10., -10., 100.);
+	glOrtho(-3., 3., -3., 3., -3., 3.);
 	
 	glRotatef(rotationVertical, 0., 1., 0.);
 	glRotatef(rotationHorizontal, 1., 0., 0.);
